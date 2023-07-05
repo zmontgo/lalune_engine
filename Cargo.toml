@@ -1,0 +1,29 @@
+[package]
+name = "lalune_engine"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+reqwest = { version = "0.11", features = ["json"] }
+tokio = { version = "1", features = ["full"] }
+tokio-stream = { version = "0.1", features = ["full"] }
+chrono = "0.4.26"
+serde = { version = "1.0.164", features = ["derive"] }
+base64 = "0.21.2"
+log = "0.4"
+env_logger = "0.8"
+dotenv = "0.15.0"
+sqlx = { version = "0.6", features = ["postgres", "runtime-tokio-native-tls", "chrono", "macros", "offline"] }
+bb8 = "0.8.1"
+bb8-redis = "0.13.1"
+ulid = "1.0.0"
+futures-util = "0.3"
+
+[dependencies.redis]
+version = "*"
+features = ["aio", "tokio-comp", "connection-manager"]
+
+[dev-dependencies]
+httpmock = "0.6"
